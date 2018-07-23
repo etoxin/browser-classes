@@ -1,0 +1,29 @@
+{
+  "name": "browser-classes",
+  "version": "1.0.0",
+  "description": "Adds browser classes to document body. For better browser bug fixing.",
+  "main": "browser-classes.js",
+  "scripts": {
+    "test": "jest",
+    "example": "parcel ./example/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etoxin/browser-classes.git"
+  },
+  "keywords": [
+    "browser"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etoxin/browser-classes/issues"
+  },
+  "homepage": "https://github.com/etoxin/browser-classes#readme",
+  "devDependencies": {
+    "parceljs": "^0.0.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
