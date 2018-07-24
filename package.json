@@ -5,7 +5,8 @@
   "main": "browser-classes.js",
   "scripts": {
     "test": "nyc mocha --require babel-core/register",
-    "example": "parcel ./example/index.html"
+    "example": "parcel ./example/index.html",
+    "testreport": "nyc --reporter=lcov --reporter=text-lcov npm test"
   },
   "repository": {
     "type": "git",

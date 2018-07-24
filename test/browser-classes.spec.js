@@ -1,6 +1,18 @@
 let assert = require('chai').assert;
+let expect = require('chai').expect;
 var jsdom = require('mocha-jsdom')
 import BrowserClasses from '../browser-classes.js';
+
+describe('BrowserClasses', function () {
+    jsdom();
+    it('should be a class', function () {
+        assert.equal(typeof BrowserClasses, 'function');
+    });
+
+    it('should not throw error', function () {
+        assert.isOk(new BrowserClasses());
+    });
+});
 
 describe('BrowserClasses.isString()', function () {
     it('expects isString to return true when passed a string', () => {
