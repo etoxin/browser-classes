@@ -95,7 +95,7 @@ export default class BrowserClasses {
     if (safari > 0) {
       // Safari => return version number
       return (
-        "safari-" + parseInt(ua.substring(ua.indexOf("OS ") + 3).split("_")[0])
+        "safari-" + parseInt(ua.substring(ua.indexOf('Version/') + 8).split(' Safari')[0])
       );
     }
 
