@@ -1,4 +1,4 @@
-var assert = require('assert');
+let assert = require('chai').assert;
 import BrowserClasses from '../browser-classes.js';
 
 describe('BrowserClasses.isString()', function () {
