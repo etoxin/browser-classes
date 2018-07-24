@@ -29,6 +29,7 @@
     "parceljs": "^0.0.1"
   },
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "mocha-jsdom": "^2.0.0"
   }
 }

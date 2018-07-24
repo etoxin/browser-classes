@@ -1,4 +1,5 @@
 let assert = require('chai').assert;
+var jsdom = require('mocha-jsdom')
 import BrowserClasses from '../browser-classes.js';
 
 describe('BrowserClasses.isString()', function () {
@@ -47,5 +48,26 @@ describe('BrowserClasses.detectBrowser()', () => {
 
     it('expects windows internet explorer 11 (compatibility mode / ie7 mode) to return ie-11', () => {
         assert.equal(BrowserClasses.detectBrowser('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.3; Trident/7.0; .NET4.0E; .NET4.0C)'), 'ie-7');
+    });
+
+    it('expects windows Edge to return edge-12', () => {
+        assert.equal(BrowserClasses.detectBrowser('Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10136'), 'edge-12');
+    });
+
+    it('expects firefox to return firefox-61', () => {
+        assert.equal(BrowserClasses.detectBrowser('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:61.0) Gecko/20100101 Firefox/61.0'), 'firefox-61');
+    });
+
+    it('expects safari to return safari-11', () => {
+        assert.equal(BrowserClasses.detectBrowser('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.2 Safari/605.1.15'), 'safari-11');
+    });
+});
+
+describe('BrowserClass.setClassOnBody()', function () {
+    jsdom();
+
+    it('should add class to body', function () {
+        BrowserClasses.setClassOnBody('mystring');
+        assert.equal(document.body.classList.contains('browser-mystring'), true);
     });
 });
