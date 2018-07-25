@@ -2,9 +2,9 @@
 
 Adds browser classes to document body. For better cross browser SCSS styling.
 
-This library adds the current browser and version to the `<body>` as a class to the site.
+This library adds the current browser and version to the `<body>` tag as a class to the site.
  
-Once run your `<body>` will have the following class added.
+Once you run the class, your `<body>` tag will have the following class added.
 
 ```html
 <body class="browser-firefox-65">
