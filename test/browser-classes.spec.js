@@ -1,6 +1,5 @@
 let assert = require('chai').assert;
-let expect = require('chai').expect;
-var jsdom = require('mocha-jsdom')
+var jsdom = require('mocha-jsdom');
 import BrowserClasses from '../browser-classes.js';
 
 describe('BrowserClasses', function () {
