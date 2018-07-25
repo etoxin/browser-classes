@@ -1,5 +1,7 @@
 ### Project Specific
 dist
+.nyc_report
+.nyc_output
 
 ### Node ###
 # Logs
