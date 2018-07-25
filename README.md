@@ -14,13 +14,13 @@ Once you run the class, your `<body>` tag will have the following class added.
 ## Installation
 
 ```
-npm i --save browserclasses
+npm i --save browser-classes
 ```
     
 ## Usage
 
 ```js
-import BrowserClasses from 'browserclasses';
+import BrowserClasses from 'browser-classes';
 new BrowserClasses();
 ```
 
