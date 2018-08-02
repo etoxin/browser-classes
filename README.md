@@ -84,5 +84,5 @@ Below arte some examples of the classes that will be generated for the browsers.
 | Edge 12              | `<body class="browser-edge-12">`    |
 | Google Chrome 50     | `<body class="browser-chrome-50">`  |
 | Firefox 60           | `<body class="browser-firefox-60">` |
-| Safari 11            | `<body class="browser-safari-1">`   |
+| Safari 11            | `<body class="browser-safari-11">`  |
 
