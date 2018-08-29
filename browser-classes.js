@@ -36,7 +36,7 @@ export default class BrowserClasses {
    */
   static setClassOnBody(browser) {
     BrowserClasses.isString(browser) &&
-      document.body.classList.add(`browser-${browser}`);
+    document.body.classList.add(`browser-${browser}`);
   }
 
   /**
@@ -49,54 +49,49 @@ export default class BrowserClasses {
    */
   static detectBrowser(uaOverride) {
     const ua = uaOverride || window.navigator.userAgent;
+    switch (true) {
+      case /MSIE /.test(ua):
+        // IE 10 or older => return version number
+        const msie = ua.indexOf("MSIE ");
+        return (
+          "ie-" + parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)), 10)
+        );
+        break;
+      case /Trident/.test(ua):
+        // IE 11 => return version number
+        let rv = ua.indexOf("rv:");
+        return "ie-" + parseInt(ua.substring(rv + 3, ua.indexOf(".", rv)), 10);
+        break;
+      case /Edge/.test(ua):
+        const edge = ua.indexOf("Edge/");
+        return (
+          "edge-" + parseInt(ua.substring(edge + 5, ua.indexOf(".", edge)), 10)
+        );
+        break;
+      case /Firefox/.test(ua):
+        // Firefox => return version number
+        const firefox = ua.indexOf("Firefox/");
+        return (
+          "firefox-" +
+          parseInt(ua.substring(firefox + 8, ua.indexOf(".", firefox)), 10)
+        );
+        break;
+      case /Chrome/.test(ua):
+        // Chrome => return version number
+        const chrome = ua.indexOf("Chrome/");
+        return (
+          "chrome-" +
+          parseInt(ua.substring(chrome + 7, ua.indexOf(".", chrome)), 10)
+        );
+        break;
+      case /Safari/.test(ua):
+        // Safari => return version number
+        const safari = ua.indexOf("Safari/");
+        return (
+          "safari-" + parseInt(ua.substring(ua.indexOf('Version/') + 8).split(' Safari')[0])
+        );
+        break;
 
-    const msie = ua.indexOf("MSIE ");
-    if (msie > 0) {
-      // IE 10 or older => return version number
-      return (
-        "ie-" + parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)), 10)
-      );
-    }
-
-    const trident = ua.indexOf("Trident/");
-    if (trident > 0) {
-      // IE 11 => return version number
-      let rv = ua.indexOf("rv:");
-      return "ie-" + parseInt(ua.substring(rv + 3, ua.indexOf(".", rv)), 10);
-    }
-
-    const edge = ua.indexOf("Edge/");
-    if (edge > 0) {
-      // Edge (IE 12+) => return version number
-      return (
-        "edge-" + parseInt(ua.substring(edge + 5, ua.indexOf(".", edge)), 10)
-      );
-    }
-
-    const firefox = ua.indexOf("Firefox/");
-    if (firefox > 0) {
-      // Firefox => return version number
-      return (
-        "firefox-" +
-        parseInt(ua.substring(firefox + 8, ua.indexOf(".", firefox)), 10)
-      );
-    }
-
-    const chrome = ua.indexOf("Chrome/");
-    if (chrome > 0) {
-      // Chrome => return version number
-      return (
-        "chrome-" +
-        parseInt(ua.substring(chrome + 7, ua.indexOf(".", chrome)), 10)
-      );
-    }
-
-    const safari = ua.indexOf("Safari/");
-    if (safari > 0) {
-      // Safari => return version number
-      return (
-        "safari-" + parseInt(ua.substring(ua.indexOf('Version/') + 8).split(' Safari')[0])
-      );
     }
 
     // other browsers
