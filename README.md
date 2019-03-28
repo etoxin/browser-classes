@@ -1,5 +1,7 @@
 # browser-classes
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7f9ddbd0257a486fa4ca67bd052dcec6)](https://app.codacy.com/app/etoxin/browser-classes?utm_source=github.com&utm_medium=referral&utm_content=etoxin/browser-classes&utm_campaign=Badge_Grade_Dashboard)
+
 Adds browser classes to document body. For better cross browser SCSS styling.
 
 This library adds the current browser and version to the `<body>` tag as a class to the site.
